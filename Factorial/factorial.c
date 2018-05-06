@@ -1,6 +1,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int calcul (int factorial)
+{
+  double result;
+  if (factorial == 1)
+  {
+    result = 1;
+  }
+  else if (factorial == 0)
+  {
+    result = 1;
+  }
+  else
+  {
+    result = factorial * calcul(factorial -1);
+  }
+  return result;
+}
+
 int main()
 {
   int factorial;
@@ -11,13 +29,9 @@ int main()
   scanf("%d", &factorial);
 
   init = factorial;
-  result = factorial;
 
-  while (factorial != 1)
-  {
-    factorial--;
-    result = result * factorial;
-  }
+  result = calcul(factorial);
+
   printf("La factorielle de %d est %f",init,result);
-  return result;
+
 }
