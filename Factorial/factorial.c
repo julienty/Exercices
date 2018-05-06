@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(void)
+int main()
 {
   int factorial;
   double result;
@@ -19,4 +19,5 @@ int main(void)
     result = result * factorial;
   }
   printf("La factorielle de %d est %f",init,result);
+  return result;
 }
