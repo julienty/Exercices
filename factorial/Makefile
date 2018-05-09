@@ -1,2 +1,2 @@
 factorial: factorial.c
-						gcc factorial.c -o factorial
+	gcc factorial.c -o factorial

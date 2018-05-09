@@ -1,2 +1,2 @@
 justprice: justprice.c
-						gcc justprice.c -o justprice
+	gcc justprice.c -o justprice

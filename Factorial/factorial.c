@@ -1,22 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int calcul (int factorial)
+int calcul(int factorial)
 {
-  double result;
-  if (factorial == 1)
-  {
-    result = 1;
-  }
-  else if (factorial == 0)
-  {
-    result = 1;
-  }
-  else
-  {
-    result = factorial * calcul(factorial -1);
-  }
-  return result;
+  return factorial <= 1 ? 1 : (factorial * calcul(factorial - 1));
 }
 
 int main()
@@ -32,6 +19,7 @@ int main()
 
   result = calcul(factorial);
 
-  printf("La factorielle de %d est %f",init,result);
+  printf("La factorielle de %d est %.0f\n",init,result);
 
+  return (0);
 }
