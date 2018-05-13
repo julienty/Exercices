@@ -1,2 +1,2 @@
 fibonacci: fibonacci.c
-						gcc fibonacci.c -o fibonacci
+	gcc fibonacci.c -Wall -Wextra -Werror -o fibonacci

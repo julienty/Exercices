@@ -6,7 +6,7 @@ int calcul(int factorial)
   return factorial <= 1 ? 1 : (factorial * calcul(factorial - 1));
 }
 
-int main()
+int main(void)
 {
   int factorial;
   double result;
