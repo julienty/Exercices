@@ -1,3 +1,4 @@
+#include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -6,7 +7,8 @@ int main()
   int random;
   int choice;
 
-  random = rand();
+  srand(time(NULL));
+  random = (rand()%100) + 1;
 
   printf("Quel est le montant ?");
 	scanf("%d", &choice);
@@ -24,4 +26,6 @@ int main()
     scanf("%d", &choice);
   }
   printf("Ah je dis oui oui oui !");
+
+  return (0);
 }
