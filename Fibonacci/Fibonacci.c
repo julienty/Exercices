@@ -1,13 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int fibonacci( double fibo1, double fibo2, int number)
+int fibonacci(double fibo1, double fibo2, int number)
 {
   double result;
   result = fibo1 + fibo2;
   if(result < number)
   {
-    return fibonacci( fibo2, fibo1+fibo2, number);
+    return fibonacci(fibo2, fibo1 + fibo2, number);
   }
   else if(result == number)
   {

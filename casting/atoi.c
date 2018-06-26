@@ -1,6 +1,21 @@
-#include <string.h>
 #include <stdio.h>
-#include <math.h>
+
+int power(base, exponent)
+{
+  int result;
+
+  result = 0;
+
+  if (exponent > 0)
+  {
+    result = base * power(base, exponent - 1);
+  }
+  else if (exponent == 0)
+  {
+    result = 1;
+  }
+  return result;
+}
 
 int atoi(char a[])
 {
@@ -16,51 +31,19 @@ int atoi(char a[])
   j = 0;
   result = 0;
 
-  while (a[i] != '\0')
+  while (a[i] != '\0')// calcul la longueur et attribue les valeurs dans tab[i]
   {
-    switch (a[i])
-    {
-      case 48:
-      tab[i] = 0;
-      break;
-      case 49:
-      tab[i] = 1;
-      break;
-      case 50:
-      tab[i] = 2;
-      break;
-      case 51:
-      tab[i] = 3;
-      break;
-      case 52:
-      tab[i] = 4;
-      break;
-      case 53:
-      tab[i] = 5;
-      break;
-      case 54:
-      tab[i] = 6;
-      break;
-      case 55:
-      tab[i] = 7;
-      break;
-      case 56:
-      tab[i] = 8;
-      break;
-      case 57:
-      tab[i] = 9;
-      break;
-    }
+    tab[i] = a[i] - 48;
     i++;
   }
 
-  istock = i - 1;
+  istock = i; //je sauve la valeur de i parce que je vais la faire varier par la suite.
 
-  while (j <= istock)
+  while (j < istock) //tant que c'est < à la valeur de istock.
   {
-    result += tab[j]*pow(base, (i - 1));
-    i--;
-    j++;
+    result += tab[j]*power(base, (i - 1)); //111 = 1 x 100 + 1 x 10 + 1 x 1 = 1 x 10^2 + 1 x 10^1 + 1 x 10^0
+    i--; // On diminue l'exposant.
+    j++; // j = O car je dois commencer par le premier nombre, celui en position 0. Ensuite j'augmente au fur et à mesure
   }
   return result;
 }
